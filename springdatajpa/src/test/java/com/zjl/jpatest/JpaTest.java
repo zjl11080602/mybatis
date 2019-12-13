@@ -1,12 +1,17 @@
 package com.zjl.jpatest;
 
 import com.zjl.dao.UserDao;
+import com.zjl.domain.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.Example;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by 朱俊磊
@@ -20,8 +25,12 @@ public class JpaTest {
     private UserDao userDao;
 
     @Test
-    public void testFind(){
-        userDao.findOne("137b9be51bf14269ba304bd64e7eb02c");
+    public void testFindAll(){
+        List<User> users = userDao.findAll();
+        System.out.println(users.size());
+    }
+    @Test
+    public void testFindOne(){
     }
 
 }
