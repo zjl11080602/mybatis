@@ -19,25 +19,12 @@ public class User {
     @Id
     @GeneratedValue(generator = "zjl")
     @GenericGenerator(name = "zjl",strategy = "uuid")
-    @Column(name = "uid")
+    @Column(name = "id")
     private String uid;
-    @Column(name = "username")
+    @Column(name = "userName")
     private  String username;
     @Column(name="password")
     private String password;
-    @Column(name="name")
-    private String name;
-    @Column(name="email")
-    private String email;
-    @Column(name="telephone")
-    private String telephone;
-    @Column(name="birthday")
-    private Date birthday;
     @Column(name="state")
     private Integer state;
-    @Column(name="sex")
-    private String sex;
-    @Column(name="code")
-    private String code;
-
 }

@@ -17,9 +17,9 @@
     <!-- 1.dataSource 配置数据库连接池-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/store"/>
-        <property name="user" value="root"/>
-        <property name="password" value="root123"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/houcheng"/>
+        <property name="user" value="zjl"/>
+        <property name="password" value="zjl"/>
     </bean>
     <!--配置实体类工厂-->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -58,4 +58,6 @@
     </jpa:repositories>
     <!--开启注解扫描-->
     <context:component-scan base-package="com.zjl"></context:component-scan>
+    <!--开启自动注解事务-->
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 </beans>
