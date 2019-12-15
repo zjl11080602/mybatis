@@ -38,7 +38,7 @@
                 <!--是否显示数据库语句-->
                 <property name="showSql" value="true"></property>
                 <!--设置数据库的方言-->
-                <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"></property>
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQL57Dialect"></property>
                 <!--是否创建表-->
                 <property name="generateDdl" value="true"></property>
             </bean>
@@ -47,7 +47,15 @@
         <property name="jpaDialect">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"></bean>
         </property>
+        <!--配置jpa-->
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+
     </bean>
+
     <!--配置事务的管理器-->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"></property>
@@ -58,6 +66,4 @@
     </jpa:repositories>
     <!--开启注解扫描-->
     <context:component-scan base-package="com.zjl"></context:component-scan>
-    <!--开启自动注解事务-->
-    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 </beans>
