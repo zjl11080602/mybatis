@@ -11,7 +11,7 @@
         <hibernate.version>5.4.10.Final</hibernate.version>
         <jpa.version>1.0.2.Final</jpa.version>
         <c3p0.version>0.9.5.5</c3p0.version>
-        <mysql.version>5.1.48</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
     </properties>
     <dependencies>
         <dependency>
